@@ -27,7 +27,7 @@ duplicates = []  # Return the list of duplicates in this data structure
 #look over names, compare names in 1 to names in 2 
 # can use contains methodd in BST for name. 
 #append to duplicate
-bst = BSTNode(names_1[0]) 
+bst = BSTNode(names_1[0]) #start
 for name_1 in names_1:
     bst.insert(name_1) #for every name in names 1, insert to tree
 
@@ -35,7 +35,7 @@ for name_2 in names_2: #for every name in 2: see if tree contains, if so add to 
     if bst.contains(name_2):
         duplicates.append(name_2)
 
-        ##BST runtime runtime: 0.07622146606445312 seconds 
+        ##BST runtime runtime: 0.07622146606445312ish seconds 
         # O(log n)?
 
 

@@ -13,7 +13,7 @@ buffer.append('f')
 buffer.get()   # should return ['d', 'e', 'f']
 '''
 from dll import DoublyLinkedList
-##FIFO, queue style. num for input var, get-gets all in order from Front to back
+
 #append pushes onto front, oldest leaves line
 class RingBuffer:
     def __init__(self, capacity):

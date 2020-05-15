@@ -48,10 +48,12 @@ class LinkedList:
             node = new_next #reset my next 
             self.head = prev #reset the head prev
 
+
+        #attempting recursively     
         '''
         prev = None
         node = self.head
-        nodes = node.reverse_list(next_node)
+        node.reverse_list(next_node)
         self.next_node  =self.head
         return nodes
 '''

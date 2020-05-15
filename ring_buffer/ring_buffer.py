@@ -24,14 +24,23 @@ class RingBuffer:
 
     def append(self, item):
         if self.storage.length < self.capacity: #check capacity: if space: add item
-            self.storage.add_to_tail(item)
-            self.node = self.storage.head
+            self.storage.add_to_tail(item) #put item in back
+            self.node = self.storage.head #make mself head
         elif self.storage.length == self.capacity: #if capacity is full need:
-            self.node.value = item #get item value to add
-            if self.node ==self.storage.tail: #if node is on tail, move to front
-                self.node = self.storage.head #else put node in front
+            self.node.value = item #get the new item
+            if self.node == self.storage.tail: #if at tail
+                self.node = self.storage.head #add to dll head
             else:
-                self.node = self.current.next #move nodes down a spot when adaded
+                self.node = self.node.next #move nodes down a spot when adaded
             
     def get(self):
-        pass
+        storage = [] #list to add nodes to after getting
+        node = self.storage.head #desingate head 
+        #check for nodes to add, then add nodes to lsit 
+        # while the exist
+        while node is not None:
+            storage.append(node.value)
+            #get next node, then repeat add
+            node = node.next
+        #return ist of nodes
+        return storage
